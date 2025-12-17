@@ -187,6 +187,7 @@
     --animate-spin: spin 1s linear infinite;
     --animate-ping: ping 1s cubic-bezier(0, 0, .2, 1) infinite;
     --animate-pulse: pulse 2s cubic-bezier(.4, 0, .6, 1) infinite;
+    --animate-bounce: bounce 1s infinite;
     --blur-sm: 8px;
     --blur-md: 12px;
     --blur-lg: 16px;
@@ -887,6 +888,10 @@
     z-index: 100;
   }
 
+  .z-\[9999\] {
+    z-index: 9999;
+  }
+
   .order-first {
     order: -9999;
   }
@@ -1316,6 +1321,10 @@
     height: 100vmax;
   }
 
+  .h-\[300px\] {
+    height: 300px;
+  }
+
   .h-\[350px\] {
     height: 350px;
   }
@@ -1554,6 +1563,10 @@
 
   .w-\[100vmax\] {
     width: 100vmax;
+  }
+
+  .w-\[300px\] {
+    width: 300px;
   }
 
   .w-\[350px\] {
@@ -1860,6 +1873,10 @@
     transform: var(--tw-rotate-x, ) var(--tw-rotate-y, ) var(--tw-rotate-z, ) var(--tw-skew-x, ) var(--tw-skew-y, );
   }
 
+  .animate-bounce {
+    animation: var(--animate-bounce);
+  }
+
   .animate-caret-blink {
     animation: 1.25s ease-out infinite caret-blink;
   }
@@ -2062,6 +2079,10 @@
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 8) * var(--tw-space-y-reverse));
     margin-block-end: calc(calc(var(--spacing) * 8) * calc(1 - var(--tw-space-y-reverse)));
+  }
+
+  .gap-x-2 {
+    column-gap: calc(var(--spacing) * 2);
   }
 
   :where(.space-x-4 > :not(:last-child)) {
@@ -3500,6 +3521,11 @@
   .tracking-\[0\.2em\] {
     --tw-tracking: .2em;
     letter-spacing: .2em;
+  }
+
+  .tracking-\[0\.3em\] {
+    --tw-tracking: .3em;
+    letter-spacing: .3em;
   }
 
   .tracking-tight {
@@ -6331,6 +6357,12 @@
   }
 
   @media (min-width: 48rem) {
+    .md\:mt-4 {
+      margin-top: calc(var(--spacing) * 4);
+    }
+  }
+
+  @media (min-width: 48rem) {
     .md\:mt-12 {
       margin-top: calc(var(--spacing) * 12);
     }
@@ -6591,6 +6623,12 @@
   @media (min-width: 48rem) {
     .md\:gap-12 {
       gap: calc(var(--spacing) * 12);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:gap-x-3 {
+      column-gap: calc(var(--spacing) * 3);
     }
   }
 
@@ -9306,6 +9344,18 @@
 @keyframes pulse {
   50% {
     opacity: .5;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    animation-timing-function: cubic-bezier(.8, 0, 1, 1);
+    transform: translateY(-25%);
+  }
+
+  50% {
+    animation-timing-function: cubic-bezier(0, 0, .2, 1);
+    transform: none;
   }
 }
 

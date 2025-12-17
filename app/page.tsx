@@ -1,3 +1,6 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import { HeroCarousel } from "@/components/hero-carousel"
 import { Navbar } from "@/components/navbar"
 import { HeroContent } from "@/components/hero-content"
@@ -11,10 +14,24 @@ import KineticSection from "@/components/kinetic-section"
 import BookingSection from "@/components/booking-section"
 import Footer from "@/components/footer"
 import BackToTop from "@/components/back-to-top"
+import PageLoader from "@/components/page-loader"
 
 export default function HomePage() {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // Ensure minimum loading time for smooth experience
+    const minLoadTime = setTimeout(() => {
+      setIsLoading(false)
+    }, 3500)
+
+    return () => clearTimeout(minLoadTime)
+  }, [])
+
   return (
-    <main className="relative overflow-hidden">
+    <>
+      {isLoading && <PageLoader onLoadComplete={() => setIsLoading(false)} />}
+      <main className="relative overflow-hidden">
       {/* Hero Section with Background Carousel */}
       <div id="home" className="relative min-h-screen">
         <HeroCarousel />
@@ -58,5 +75,6 @@ export default function HomePage() {
       {/* Back to Top Button */}
       <BackToTop />
     </main>
+    </>
   )
 }
