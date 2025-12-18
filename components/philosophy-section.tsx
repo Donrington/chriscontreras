@@ -51,6 +51,7 @@ export function PhilosophySection() {
           span.style.opacity = "0.3"
           span.style.filter = "blur(4px)"
           span.style.display = "inline-block"
+          span.style.marginRight = "0.25em"
           paragraph.appendChild(span)
         })
 

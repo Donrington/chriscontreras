@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
 
     // Log submission for testing
     console.log("📧 Contact form submission:", {
-      to: "Zal423306@gmail.com",
+      to: 'christinacontrerascleaning@gmail.com',
       from: validatedData.email,
       subject: `New Contact Form Submission from ${validatedData.name}`,
       data: validatedData,
@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
 
     await resend.emails.send({
       from: 'Contact Form <onboarding@resend.dev>',
-      to: 'Zal423306@gmail.com',
+      to: 'christinacontrerascleaning@gmail.com',
       subject: `New Contact Form Submission from ${validatedData.name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
     sgMail.default.setApiKey(process.env.SENDGRID_API_KEY!)
 
     await sgMail.default.send({
-      to: 'Zal423306@gmail.com',
+      to: 'carryoby@gmail.com',
       from: 'your-verified-sender@yourdomain.com', // Must be verified in SendGrid
       subject: `New Contact Form Submission from ${validatedData.name}`,
       html: `
