@@ -3,10 +3,10 @@ export function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Christina Contreras Cleaning",
-    "image": "https://christinacontrerascleaning.com/logos/trans2_dark.png",
+    "image": "https://chriscontrerascleaning.com/logos/trans2_dark.png",
     "description": "Professional residential and commercial sanitation services. Experience precision cleaning with advanced protocols and eco-friendly solutions.",
-    "@id": "https://christinacontrerascleaning.com",
-    "url": "https://christinacontrerascleaning.com",
+    "@id": "https://chriscontrerascleaning.com",
+    "url": "https://chriscontrerascleaning.com",
     "telephone": "+1-XXX-XXX-XXXX", // Replace with actual phone number
     "email": "christinacontrerascleaning@gmail.com",
     "priceRange": "$$",

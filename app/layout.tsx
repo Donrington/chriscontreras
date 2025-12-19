@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://christinacontrerascleaning.com",
+    url: "https://chriscontrerascleaning.com",
     siteName: "Christina Contreras Cleaning",
     title: "Christina Contreras Cleaning | Pure Perfection in Every Detail",
     description:
