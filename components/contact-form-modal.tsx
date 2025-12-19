@@ -39,6 +39,7 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
         name: formData.get("name"),
         email: formData.get("email"),
         phone: formData.get("phone"),
+        service: formData.get("service"),
         message: formData.get("message"),
       }
 
@@ -187,7 +188,7 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
           {/* Phone field */}
           <div className="space-y-2">
             <label htmlFor="phone" className="block text-sm font-semibold text-[#1C4274] dark:text-[#F5E6CC]">
-              Phone Number
+              Phone Number <span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#1C4274]/50 dark:text-[#F5E6CC]/50" />
@@ -195,10 +196,32 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
                 type="tel"
                 id="phone"
                 name="phone"
+                required
                 className="w-full pl-12 pr-4 py-3 md:py-4 rounded-xl bg-[#F4F7FA] dark:bg-[#1C4274]/20 border border-[#F5E6CC]/30 dark:border-[#F5E6CC]/20 text-[#0B1A2F] dark:text-[#F5E6CC] placeholder:text-[#1C4274]/40 dark:placeholder:text-[#F5E6CC]/40 focus:outline-none focus:ring-2 focus:ring-[#1C4274] dark:focus:ring-[#F5E6CC] transition-all duration-300"
                 placeholder="+1 (234) 567-8900"
               />
             </div>
+          </div>
+
+          {/* Service field */}
+          <div className="space-y-2">
+            <label htmlFor="service" className="block text-sm font-semibold text-[#1C4274] dark:text-[#F5E6CC]">
+              Service Needed <span className="text-red-500">*</span>
+            </label>
+            <select
+              id="service"
+              name="service"
+              required
+              className="w-full px-4 py-3 md:py-4 rounded-xl bg-[#F4F7FA] dark:bg-[#1C4274]/20 border border-[#F5E6CC]/30 dark:border-[#F5E6CC]/20 text-[#0B1A2F] dark:text-[#F5E6CC] focus:outline-none focus:ring-2 focus:ring-[#1C4274] dark:focus:ring-[#F5E6CC] transition-all duration-300"
+            >
+              <option value="">Select a service...</option>
+              <option value="Residential Cleaning">Residential Cleaning</option>
+              <option value="Commercial Cleaning">Commercial Cleaning</option>
+              <option value="Deep Cleaning">Deep Cleaning</option>
+              <option value="Move In/Out Cleaning">Move In/Out Cleaning</option>
+              <option value="Post-Construction Cleaning">Post-Construction Cleaning</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
 
           {/* Message field */}
