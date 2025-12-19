@@ -1,0 +1,9 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow specific paths (if any)
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://christinacontrerascleaning.com/sitemap.xml
